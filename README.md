@@ -1,40 +1,56 @@
-# UniProtect FormField Module
+GS4UNIPROTECT
+=============
 
-## Introduction
+SilverStripe 4 Uniprotect Form Field Module
+-------------------------------------------
 
-Provides a hidden FormField which allows form to validate for non-bot submissions
-by checking if the value in that field is correct.
+Copyright ©2018, Andreas Gerhards andreas@gelysis.net.
+All rights reserved. / Alle Rechte vorbehalten. / Tous droits réservés.
 
-## Maintainer Contact
+# LICENSE
+The Gs4Uniprotect module is open source and licensed as [BSD-3-Clause](http://opensource.org/licenses/BSD-3-Clause).
 
- * Elvinas Liutkevičius
-   <elvinas (at) unisolutions (dot) eu>
+Please consult `LICENSE.md` for further details.
 
-## Requirements
+# LIZENZ
+Das Gs4Uniprotect-Modul ist Open Source und unter der [BSD-3-Klausel](http://opensource.org/licenses/BSD-3-Clause) lizensiert.
 
- * SilverStripe 3
- * Requires [`SpamProtection`](https://github.com/silverstripe/silverstripe-spamprotection) module
+Bitte lesen sie `LICENSE.md` für weitergehende Informationen.
 
-## Installation
+# SYSTEM REQUIREMENTS
+Requires PHP 5.6 (7.1 recommended) or later.
 
- * Copy the `uniprotect` directory into your main SilverStripe webroot
- * Run ?flush=1
 
-## Usage
+# DESCRIPTION
+This package is a optional module for SilverStripe 4. It provides a hidden FormField which allows form to validate for 
+non-bot submissions by checking if the value in that field is correct.
 
-### As a Standalone Field
+# INSTALLATION
+* Use packagist dependency: `gelysis/gs4-uniprotect`.
 
+# USAGE
+
+## Standalone Field
 If you want to use UniProtect field by itself, you can simply just include it as a field in your form.
 
-	$uniprotectField = new UniProtectField('MyUniProtect');
+    $uniprotectField = new Gs4Uniprotect\UniProtectField('MyUniProtect');
 
-### Integration with Spamprotection module
+## Integration with Spamprotection
+You can use it to protect any built informs on your website, including user comments in the 
+[`Blog`](https://github.com/silverstripe/silverstripe-blog) module. Example for `mysite/_config/config.yml`:
 
-This requires the [`SpamProtection`](https://github.com/silverstripe/silverstripe-spamprotection) module to be installed, see its documentation for details. You can use this field to protect any built informs on your website, including user comments in the [`Blog`](https://github.com/silverstripe/silverstripe-blog) module.
+    FormSpamProtectionExtension:
+        default_spam_protector: 'UniProtectProtector'
 
-Configuration example in `mysite/_config/config.yml`
+Then once you have setup this config you will need to include the spam protector field as per the instructions on the 
+[`SpamProtection`](https://github.com/silverstripe/silverstripe-spamprotection) module page.
 
-	FormSpamProtectionExtension:
-		default_spam_protector: 'UniProtectProtector'
+# QUESTIONS AND FEEDBACK
+Please contact the author.
 
-Then once you have setup this config you will need to include the spam protector field as per the instructions on the [`SpamProtection`](https://github.com/silverstripe/silverstripe-spamprotection) module page.
+# RELEASE INFORMATION
+Gs4Uniprotect 0.9.0
+2018-02-16
+
+# UPDATES
+Please see `CHANGELOG.md`.
