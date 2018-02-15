@@ -1,14 +1,14 @@
 {
     "name" : "gelysis/gs4-uniprotect",
     "description" : "Simple spam protection module for Silverstripe 4.",
-    "type" : "silverstripe-module",
+    "type" : "silverstripe-vendormodule",
     "license" : "BSD-3-Clause",
     "keywords": [
        "silverstripe", 
        "spamprotection",
        "spam"
     ],
-    "homepage" : "https://github.com/gelysis/gs4-unprotect",
+    "homepage" : "https://github.com/gelysis/gs4-uniprotect",
     "authors": [
         {
             "name" : "Andreas Gerhards",
@@ -19,9 +19,17 @@
             "email" : "elvinas@unisolutions.eu"
         }
     ],
-    "minimum-stability" : "dev",
-    "prefer-stable" : true,
     "require" : {
         "silverstripe/spamprotection" : "~3.0|~3.0@dev"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "Gs4Uniprotect\\": "src/"
+        }
+    },
+    "include-path": [
+        "src/"
+    ],
+    "minimum-stability" : "dev",
+    "prefer-stable" : true
 }
