@@ -9,7 +9,7 @@
  */
 
 declare(strict_types = 1);
-namespace Gs4Uniprotect;
+namespace gelysis\Gs4Uniprotect;
 
 use SilverStripe\SpamProtection\SpamProtector;
 

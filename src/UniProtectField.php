@@ -10,7 +10,7 @@
  */
 
 declare(strict_types = 1);
-namespace Gs4Uniprotect;
+namespace gelysis\Gs4Uniprotect;
 
 use SilverStripe\Control\Session;
 use SilverStripe\Forms\FormField;
