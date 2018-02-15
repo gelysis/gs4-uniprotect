@@ -22,12 +22,12 @@
     "require" : {
         "silverstripe/spamprotection" : "~3.0|~3.0@dev"
     },
-    "autoload": {
+    "autoload" : {
         "psr-4": {
-            "Gs4Uniprotect\\": "src/"
+            "gelysis\\Gs4Uniprotect\\": "src/"
         }
     },
-    "include-path": [
+    "include-path" : [
         "src/"
     ],
     "minimum-stability" : "dev",
