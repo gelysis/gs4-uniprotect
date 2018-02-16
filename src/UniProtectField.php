@@ -9,7 +9,6 @@
  * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause - Please check LICENSE.md for more information
  */
 
-declare(strict_types = 1);
 namespace gelysis\Gs4Uniprotect;
 
 use SilverStripe\Control\Session;
