@@ -1,5 +1,5 @@
-GS4UNIPROTECT
-=============
+GS4 UNIPROTECT
+==============
 
 SilverStripe 4 Uniprotect Form Field Module
 -------------------------------------------
@@ -49,7 +49,7 @@ Then once you have setup this config you will need to include the spam protector
 Please contact the author.
 
 # RELEASE INFORMATION
-Gs4Uniprotect 0.9.0
+Gs4Uniprotect 0.9.5
 2018-02-16
 
 # UPDATES

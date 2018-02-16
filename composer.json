@@ -24,7 +24,7 @@
     },
     "autoload" : {
         "psr-4": {
-            "gelysis\\Gs4Uniprotect\\": "src/"
+            "Gs4Uniprotect\\": "src/"
         }
     },
     "include-path" : [

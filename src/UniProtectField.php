@@ -9,7 +9,7 @@
  * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause - Please check LICENSE.md for more information
  */
 
-namespace gelysis\Gs4Uniprotect;
+namespace Gs4Uniprotect;
 
 use SilverStripe\Control\Session;
 use SilverStripe\Forms\FormField;
