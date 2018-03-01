@@ -9,7 +9,6 @@
  * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause - Please check LICENSE.md for more information
  */
 
-declare(strict_types = 1);
 namespace Gs4Uniprotect;
 
 use SilverStripe\Control\Session;
@@ -21,6 +20,15 @@ class UniProtectField extends FormField
 {
 
     /**
+     * @return \SilverStripe\Control\Session self::$session
+     */
+    protected function getSession()
+    {
+        $request = Injector::inst()->get(HTTPRequest::class);
+        return $request->getSession();
+    }
+
+    /**
      * {@inheritDoc}
      * @see \SilverStripe\Forms\FormField::Field()
      */
@@ -30,10 +38,10 @@ class UniProtectField extends FormField
             Requirements::javascript(THIRDPARTY_DIR.'/jquery/jquery.js');
         }
 
-        Session::clear('FormField.'.$this->form->FormName().'.'.$this->getName().'.error');
+        $this->getSession()->clear('FormField.'.$this->form->FormName().'.'.$this->getName().'.error');
 
         $value = md5(mt_rand());
-        Session::set($this->class.'.'.$this->form->FormName().'.'.$this->getName(), $value);
+        $this->getSession()->set($this->class.'.'.$this->form->FormName().'.'.$this->getName(), $value);
 
         if ($this->stat('javascript_included')) {
             Requirements::customScript("
@@ -67,16 +75,15 @@ class UniProtectField extends FormField
      */
     public function validate($validator)
     {
-        if (!isset($_REQUEST[$this->getName()])
-            || $_REQUEST[$this->getName()] != Session::get($this->class.'.'.$this->form->FormName().'.'.$this->getName())
-        ) {
+        $fieldSessionValue = $this->getSession()->get($this->class.'.'.$this->form->FormName().'.'.$this->getName());
+
+        if (!isset($_REQUEST[$this->getName()]) || $_REQUEST[$this->getName()] != $fieldSessionValue) {
             $validator->validationError(
                 $this->getName(),
                 _t($this->class . '.INVALID', 'Apologies but looks like that you are trying to post spam here.'),
                 'validation',
                 false
             );
-
             $valid = false;
         }else {
             $valid = true;
