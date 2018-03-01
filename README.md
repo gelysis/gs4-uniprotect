@@ -49,7 +49,7 @@ Then once you have setup this config you will need to include the spam protector
 Please contact the author.
 
 # RELEASE INFORMATION
-Gs4Uniprotect 0.9.6
+Gs4Uniprotect 0.9.7
 2018-03-02
 
 # UPDATES
