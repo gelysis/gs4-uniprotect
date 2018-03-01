@@ -1,5 +1,5 @@
-name: UniProtect
+name: Gs4Uniprotect
 ---
-UniProtectField:
+Gs4Uniprotect\UniProtectField:
   jquery_included: true
   javascript_included: true
